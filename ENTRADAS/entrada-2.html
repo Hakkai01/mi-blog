@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devce-width, initial-scale=1.0">
+        <title>Segunda Entrada - Mi Blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+
+ <body>
+
+        <header>
+
+            <h1><a href="../index.html">Mi Blog</a></h1>
+
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="#">Sobre yo</a>
+            </nav>
+
+        </header>
+
+        <main class="entrada-completa">
+        
+            <article>
+                <h2>Parte 2</h2>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>Buenas buenas, bueno, la verdad aca si tengo mucha informacion que agregar, debido a que la verdad ayer no me quede quieto
+                    y me pue a hacer demaciadas cosas, no solo vincular los archivos de estilo al index, sino que tambien termine publicando
+                    la pagina en github... <br><br>
+
+                    Bueno igual intentare organizar todo esto, soooo, primero en esta parte 2 vamos a hablar mas sobre los estilos, como fue
+                    que terminamos dejando esto en forma de tarjetas, o al menos en su primera version, supongo que mas adelante cambiaremos la
+                    distribucion de lo que es la pagina ahora, y pues ya ahsjdhasdjhs.</p>
+            </article>
+
+            <article>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>Anoche me disocie tanto que no se en que momento termine disque creando y configurando un token en github que no expira osea
+                    *colapso* bueno ya, empecemos.</p>
+            </article>
+
+            <article>
+                <h2>Estilo de tarjetas</h2>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>De hecho para lograr este estilo es bastante facil, unicamente tenemos que ubicar los articulos "article" dentro del main y
+                    colocarles un titulo con una etiqueta como "h2", opcional la fecha, digamos que aca la tengo implementada para llevar el 
+                    registro de los dias que me pongo a estudiar y los que no, y un "p" o pues un parrafo de texto, que es donde escribo todas
+                    estas babosadas. </p>
+
+                    <pre><code>
+    "main"
+        "article"
+            "h2" Ejemplo, aca pondria Entrada 1 "/h2"
+            "p class="fecha">dia - mes - año" "/p"
+            "p" Cualquier descripcion o comentario x "/p"
+
+                    </pre></code>
+
+                <p>Literalmente esto es la logica detras del estilo de las tarjetas de texto que tengo aca, pero no es todo claramente, el codigo
+                    como tal, genera la estructura y organiza el contenido en forma de tarjeta, lo que enrealidad le da ese estilo, y la animacion
+                    es todo lo que vamos a agregar detro del CSS. <br><br>
+
+                    Algo que no explique es el "class="fecha"" y esto en pocas palabras es para indicar la fecha que colocamos, o que queremos resaltar
+                    hay funciones que la colocan automaticamente, no como esta que es manual, pero pues ya lo cambiaremos con el tiempo.
+                </p>
+
+                <pre><code>
+
+    article {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 20p;
+    }
+
+    article h2{
+        margin: 0 0 6px 0;
+        font-size: 20px;
+    }
+
+    .fecha {
+        margin: 0 0 12px 0;
+        font-size: 13px;
+        color: #aaa;
+    }
+
+                </pre></code>
+
+            <p>Esto ya nos daria el estilo de las tarjetas de texto, literlamente mientras que en el index estamos colocando la estructura, en el css estamos
+                resaltando deverdad lo que son las tarjetas, aca unicamente esta el estilo, color, sombra, fondo, etc, aun no le agregamos la animacion con
+                el "a:hover", lo cual, es lo siguiente que vamos a agregar.</p>
+
+            </article>
+
+            <article>
+                <h2>Animacion / Efecto de tarjeta</h2>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>
+                    Ahora, para lograr el efecto de que la tarjeta se mueve cuando pasamos el puntero del mouse por encima de la misma solo vamos a tener que 
+                    agregar unas pocas cosas, y todo dentro del css.
+                </p>
+
+                <pre><code>
+
+    Esto es lo que se agrega dentro del bloque "article"
+
+    border-left: 4px solid #222;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    y creamos otro bloque llamado:
+
+    article:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+                </code></pre>
+
+                <p>Aver traducido al español pasa lo siguente, las dos lineas de codigo que agregamos en el bloque de "article" signfican que estamos primero
+                    colocando el borde izquierdo de la tarjeta de una forma especifica, en este caso solido de 4 pixeles con un color #222, y queremos que
+                    haga una transicion, transformando la tarjeta con una duracion de 0.2 segundos, aparte que genere una sombra a la caja tambien con una duracion
+                    de 0.2 segundos, diciendolo en palabras es mucha cosa, la verdad ,pero codigo son solo 6 palabritas, asi lo entendi mejor. <br><br>
+
+                    Ahora en el otro bloque de "article:hover" estamos indicando que es lo que queremos que se haga cuando el mouse pase por encima de las tarjetas
+                    en este caso queremos que se trasforme "transform" y asi cuando el mouse pase por cada una de las tarjetas que tengamos estas se desplacen -3 
+                    pixeles en el eje de Y, es decir de forma vertical, pues si no nos queremos complicar la vida hablando en terminos de eje de x y eje de y (por si
+                    acaso el eje de x siempre representa todo lo que sea en horizontal y el eje de Y todo lo que sea vertical), el box shadow, cumple lo mismo que en 
+                    el anterior, solo que al agregar parametros como "0 6px 20px" le estamos dando la instruccion de "en cual lado quiero que generes la sombra" algo asi. </p>
+
+            </article>
+
+            <article>
+                <h2>Diseño</h2>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>La verdad en esta parte, primero tuve que escoger la paleta de colores actual que tiene la pagina, y obviamente siguiendo mi estilo personal y que considero
+                    que todo en monocromatico queda mejor (blanco y negro), pues escogi colores crema tanto claros como oscuros para la interfaz, texto, fondos, color de letras
+                    etc etc etc, no hay gran cosa que explicar aca, ademas que tambien modificamos/organizamos un poco mas la sintaxis del archivo .CSS, ya que una de las ventajas
+                    que tiene este archivo es que como llama a las etiquetas en general, pues es mucho mas facil de organizar, no tengo que estar escogiendo color por color para cada
+                    tarjeta, osea si podria hacerlo, pero que pereza. <br> <br>
+                </p>
+
+                <pre><code>
+
+    /* ===== BASE ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+/* ===== NAV ===== */
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #1a1a1a;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+/* ===== ARTÍCULOS ===== */
+article {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 3px solid #333;
+    border-radius: 0 10px 10px 0;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+article h2 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.fecha {
+    margin: 0 0 12px 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 2px;
+    font-size: 13px;
+    color: #bbb;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+                </code></pre>
+
+                <p>Algo asi quedaria el .css que maneja esta pagina, junto con los estilos de las tarjetas, animacion y aja todo eso</p>
+
+            </article>
+            
+        </main>
+
+
+        <footer>
+            <p>Hecho por mi persona - 2026 </p>
+        </footer>
+    </body>
+</html>

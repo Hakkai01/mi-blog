@@ -24,6 +24,11 @@ header h1 {
     color: #1a1a1a;
 }
 
+header h1 a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
 /*NAV-BARRA DE NAVEGACION*/
 nav a {
     margin-left: 25px;
@@ -38,7 +43,7 @@ nav a:hover {
 
 /*MAIN*/
 main {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 25px auto;
     padding: 0 15px;
 }
@@ -82,3 +87,36 @@ footer {
     border-top: 1px solid #e0e0e0;
     margin-top: 30px;
 }
+
+/*LEER MAS*/
+.leer-mas {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.leer-mas:hover {
+    color: #000;
+    border-color: #000;
+}
+
+/*BLOQUES DE CODIGO*/
+pre {
+    background: #f0f0f0;
+    border-radius: 75px;
+    padding: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+}
+

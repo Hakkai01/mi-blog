@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=devce-width, initial-scale=1.0">
+        <title>Primera Entrada - Mi Blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+
+    <body>
+
+        <header>
+
+            <h1><a href="../index.html">Mi Blog</a></h1>
+
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="#">Sobre yo</a>
+            </nav>
+
+        </header>
+
+        <main class="entrada-completa">
+
+            <article>
+                <h2>Parte 1</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Hoy aprendi a poner el live server en go juas juas, bueno aparte de todo eso tambien tuve que volver
+                    a familiarizarme con el entorno de desarrollo, y mas que nada con la distribucion, orden de archivos,
+                    carpetas, titulos, etc etc etc, todo tiene que ir conectado, y eso que por el momento me estoy centrando
+                    en el estudio del HTML puro. </p>
+            </article>
+
+            <article>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Mas que nada lo primero que tuve que volver a tomar en cuenta eran las definiciones tanto  de "HTML" el
+                    cual actua como la estructura de lo que queremos construir, o basandonos en una analogia, el esqueleto 
+                    de nuestro proyecto y el "CSS" como el estilo y la decoracion, o mejor dicho, la pintura y los detalles
+                    que acompañan a la estrucura del proyecto y hacen que obviamente se vea mas bonito.</p>
+            </article>
+
+             <article>
+                <h2>Etiquetas</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Ahora, algo que nunca tuve muy claro, (o al menos las pocas veces que vimos paginas web en la uni) era
+                    el uso de las etiquetas, o mas que nada el concepto de "Que son las etiquetas" la verdad es que primero 
+                    se debe tener en cuenta que las etiquetas pueden o no tener un cierre, hay algunas como lo podria ser el
+                    "hr" la cual agrega una linea de espacio y no necesariamente lleva un cierre, pero, ¿que es un cierre?
+                    esto es literalmente colocar un / dentro de la etiqueta pero antes de las letras y sirve (en palabras del codigo)
+                    para señalar el fin de ese marcador, porque eso es lo que representan las etiquetas, marcadores que le indican al 
+                    navegador como se estructura el contenido, de que forma se organiza, y como debe de ser mostrado este mismo.
+                    (Lose, si solo con esta definicion me extendi ahora imagine lo que viene despues.)</p>
+            </article>
+
+            <article>
+                <h2>CSS y Estilo</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Ahora, la decoracion, como tal el CSS tambien se basa en etiquetas, pero ubica las etiquetas mediante
+                    su nombre es decir algo como "h1 {...}" traducido al español (claramente) esto significaria "para todas las etiquetas h1
+                    el estilo sera el siguiente" y dentro de las cuales podemos modificar, o agregar propiedades como lo pueden ser el color,
+                    el tamaño del texto, la fuente del texto, el ancho, las margenes, incluso agregar animaciones sencillas sin hacer uso de 
+                    javaScript (aun)
+                </p>
+            </article>
+
+            <article>
+                <h2>Cajas y Espacio</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Aca ya estamos haciendo referencia a una etiqueta, en este caso la etiqueta "div" (la cual no estoy usado mucho en el codigo)
+                    el div actua como una caja "generica" que agrupa cosas (y ya esa es toda su funcion), por otro lado el "Class=tarjeta" coloca
+                    el nombre por el cual el CSS puede identificarlo, tambien tenemos algo llamado .tarjeta"padding" el cual hace referencia al 
+                    espacio interno dentro de la caja (creo), el "boder-radius" el cual vuelve mas redondos los bordes de las tarjetas (como las
+                    que tenemos en la interfaz haciendo referencia a las entradas) y por ultimo tenemos los "max-width" que limita el acho de las
+                    tarjetas, junto con el "border" que ajusta el borde de las tarjetas.</p>
+            </article>
+
+            <article>
+                <h2>Estructura de ejemplo</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <pre><code>
+
+    Estructua HTML 
+
+    "h1" Hola mundo "/h1"
+    "p" Esta seria la etiqueta de un parrafo"/p"
+    "p" Un segundo parrafo"/p"
+
+    <hr>
+
+    Estructura CSS
+
+    p {
+        color: #555;
+        font-size: 13px;
+        font-family: Georgia, Serif;
+    }
+
+</code></pre>
+                <p>
+                    Primero que nada, cabe aclarar son ejemplos, y reemplace los (<>)por las comillas "" sino estaria escribiendo codigo
+                    dentro del mismo codigo, y la idea es dar un pequeño ejemplo de como se estaria manejado la sintaxis tanto para los 
+                    archivos de HTML como los de CSS, porque obviamente son dos archivos separados, para que estos funcionen se deben de 
+                    vicular. <br><br>
+
+                    Aca no hice mencion de la etiqueta "tittle" porque se me olvido, pero la verdad si es importante, ya que esta 
+                    modifica el texto que aparece en la pestaña del navegador, por lo general o al menos yo la coloco dentro del "head"
+                    de la pagina, antes de los links, (head y header son dos cosas totalmente distintas).</p>
+            </article>
+
+            <article>
+                <h2>Links e Imagenes</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>Aca llega una parte de las que mas me gusta, y es hablar de los links, primero porque nos permite agregar imagenes al
+                    lado del texto (cosa que no he hecho sino ya tendria todo esto lleno de memes) y segundo porque nos permite vincular 
+                    los archivos del index, junto con los archivos de estilo del CSS, o los de JS y bla bla bla.
+                    <br>
+                    <br>
+                    La etiqueta "a" (que si uso bastante) funciona como un link y el "href" es quien nos dice a donde va, la etiqueta "img"
+                    nos ayuda a vincular y mostrar una imagen donde el src es la url o ubicacion de la imagen (la cual obviamente debemos
+                    colocar sino entonces, que espera que se muestre?), tambien tenemos el "alt" que funciona como una descripcion. (el "a:hover
+                    " es una pequeña animacion que se puede agregar dentro del archivo de CSS y se activa cuando la flecha del mouse pasa por 
+                    encima de la etiqueta o el objeto, algo asi, con eso tengo la animacion de que las tarjetas se muevan)</p>
+            </article>
+
+            <article>
+                <h2>Ejemplo Estructura 2</h2>
+                <p class="fecha">16 de junio, 2026</p>
+               
+                <pre><code>
+
+    Estructura HTML
+
+    "h2"Cualquier monda"/h2"
+    "a href="https://via.developer.org" "/a"
+    "br" "/br"
+
+    "img src="https.//via.placeholder.com... text=Mi+blog" alt"placeholder""
+
+                </code></pre>
+                <p>Nota: Se me olvido recalcar que exiten variantes (asi las llamo) de las etiquetas, a que me refiero con eso, dentro de la etiqueta
+                    "h1", la cual se usa para titulos, sub titulos, etc etc etc, hay diferentes tipos, en este caso la etiqueta puede ir desde "h1" 
+                    hasta "h6" lo unico que cambia, aparte del numero de la etiqueta, es el tamaño de la letra, y ya. <br><br>
+
+                    Casi se me olvida, el "br" agrega un salto de linea, tal cual como este, (salto de linea osea el espacio entre parrafos, eso es todo.)</p>
+
+                  <pre><code>
+
+    Estructura CSS
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    img {
+        border-radius: 8px;
+        display: block;
+    }
+
+                </code></pre>
+                <p>Nota: El "Text-decoration" que aparece en el ejemplo, como su nombre lo indica, decora el texto, y tiene o se le pueden agregar muchas
+                    opciones que modifican el texto, literal con escribirlo dentro del CSS, ya el mismo CSS nos arroja las opciones que podemos implementarle,
+                    el "underline" lo unico que hace es colocar una linea debajo del texto, nada mas.</p>
+            </article>
+
+             <article>
+                <h2>HTML Semantico</h2>
+                <p class="fecha">16 de junio, 2026</p>
+                <p>"header", "main", "article", "nav" hasta el momento considero que son las etiquetas mas relevantes dentro de la sintaxis o estructura del HTML,
+                    principalmente porque son los encargados de decirle al navegador que es y en donde va cada cosa, asi como su distribucion, (de hecho la etiqueta
+                    que mas estoy usando en este momento para agregar contenido como tarjetas es el article), "display:flex" mas que nada coloca elementos uno al lado
+                    del otro y "margin:0" centra automaticamente todo el contenido.</p>
+
+            <pre><code>
+
+    Estructura HTML
+
+    "header"
+        "h1"Juanito.dev"/h1"
+        "nav"
+        "a href="#">Inicio"/a"
+        "a href="#">Sobre yo"/a"
+        "/nav"
+    "/header"
+
+    "main"
+        "article"
+            "h2" Volvieron el saramambiche canon "/h2"
+    "/main"
+
+    "footer"
+        "p" Derechos reservados a mi - 2026 "/p"
+    "/footer"
+
+            </code></pre>
+                <p>Nota: Primero obviamente, en el "nav" se situa la barra de navegacion, y en este ejemplo agregamos lo que seria el "inicio" y "sobre yo" los cuales
+                    vinculados a un "a" y mediante un link nos van a dirigir a otro apartado de la pagina, (que es justo la parte que estoy trabajando ahorita pero no
+                    eh terminado por estar subiendo los apuntes xd) tambien hicimos uso del "header" como su nombre lo indica "la cabecera de la pagina" y es la parte 
+                    donde se ubican cosas como lo son el titulo, pestañas, vinculos a otras paginas, etc, yo que se, lo que quieran colocar.</p>
+                  <pre><code>
+
+    Estructura CSS
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        aling-items: center;
+        boder-bottom: 1px solid #eee;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+    }
+
+    nav a{
+        margin-left: 3px solid #7f77dd;
+        agregue lo demas que usted quiera
+    }
+
+                </code></pre>
+                <p>Nota: Ya habia mencionado lo que significa el "nombre de la etiqueta {...}" y la verdad aca queda un poco mas claro, dentro de los corchetes se pueden
+                    agregar todos los parametros que uno quiera, para modificar el estilo de lo que contiene la etiqueta, supongamos que si tenemos el "header {...}" todo 
+                    lo que agreguemos dentro de los corchetes de la etiqueta "header" en el archivo .CSS modificara unicamente todo lo que agreguemos dentro del header y nada
+                    mas. (ahora que lo pienso repeti lo mismo como dos veces, perdon estoy disociando)</p>
+            </article>
+
+        </main>
+
+        <footer>
+            <p>Hecho por mi persona - 2026 </p>
+        </footer>
+    </body>
+</html>
