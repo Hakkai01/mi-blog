@@ -29,7 +29,7 @@
                 <h2>Parte 2</h2>
                 <p class="fecha">24 de junio, 2026</p>
                 <p>Buenas buenas, bueno, la verdad aca si tengo mucha informacion que agregar, debido a que la verdad ayer no me quede quieto
-                    y me pue a hacer demaciadas cosas, no solo vincular los archivos de estilo al index, sino que tambien termine publicando
+                    y me puse a hacer demaciadas cosas, no solo vincular los archivos de estilo al index, sino que tambien termine publicando
                     la pagina en github... <br><br>
 
                     Bueno igual intentare organizar todo esto, soooo, primero en esta parte 2 vamos a hablar mas sobre los estilos, como fue
@@ -91,7 +91,7 @@
 
                 </pre></code>
 
-            <p>Esto ya nos daria el estilo de las tarjetas de texto, literlamente mientras que en el index estamos colocando la estructura, en el css estamos
+            <p>Esto ya nos daria el estilo de las tarjetas de texto, literalmente mientras que en el index estamos colocando la estructura, en el css estamos
                 resaltando deverdad lo que son las tarjetas, aca unicamente esta el estilo, color, sombra, fondo, etc, aun no le agregamos la animacion con
                 el "a:hover", lo cual, es lo siguiente que vamos a agregar.</p>
 
@@ -231,6 +231,58 @@ footer {
                 </code></pre>
 
                 <p>Algo asi quedaria el .css que maneja esta pagina, junto con los estilos de las tarjetas, animacion y aja todo eso</p>
+
+            </article>
+
+            <article>
+                <h2>Fuentes</h2>
+                <p class="fecha">24 de junio, 2026</p>
+                <p>Bueno, aca mas que nada, ya es cuestion de seguir agrengando cosas para que la pagina sea visualmente mas llamativa, algo chistoso es que 
+                    la verdad, las letras asi estilo Times New Roman no es como que me llamen mucho la atencion, pero basandonos en la ligera recomendacion de 
+                    bastantes inteligencias artificiales, con respecto a los estilos visuales de una pagina, el estilo de esas fuentes le agrega un "aire formal"
+                    al diseño de la pagina, y yo que se, soy programador no diseñador bro, lo que tu digas. <br><br>
+
+                    Ahora, para cambiar la fuente de la pagina en este caso utilizamos la etiqueta link dentro del head del archivo index, que llegados a este punto
+                    el index es la base, el pilar de la pagina, el index como tal mueve todo lo que tiene la interfaz principal, sin el index no hay nada. <br><br>
+
+                    Bueno continuemos, tenemos que agregar algo por este estilo, no voy a entrar en detalles ya explique mucho hoy, solo copie y pegue esto si lo
+                    necesita para cambiar la fuente de su pagina, pero le recomiendo que los ponga despues de la etiqueta de meta charset y antes del titulo.</p>
+
+                    <pre><code>
+
+    "link rel="preconnect" href="https://fonts.googleapis.com""
+    "link rel="preconnect" href="https://fonts.gstatic.com" crossorigin"
+    "link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet""
+
+                    </code></pre>
+
+                <p>Ahora, toca modificar el body, el header h1 y article h2 del .CSS, porque si, ya agregamos las fuentes mediante el link, pero aun no las 
+                    implementamos a la pagina, como tal las fuentes ya estan, pero no las vemos.
+                </p>
+            </article>
+
+            <article>
+                <p>Ya aqui solo seria modificar los bloques de la siguiente manera, unicamente agregando los parametros de font family y referenciando las 
+                    fuentes que acabamos de agregar, algo asi:</p>
+
+                    <pre><code>
+
+    body {
+        font-family: 'Inter', system-ui, sas-serif;
+    }
+
+    header h1, article h2 {
+        font-family: 'Playdair Display', serif;
+    }
+
+                    </code></pre>
+
+                <p>Nota: Aca como en el .CSS que yo estaba manejando, ya tenia por separados los bloques tanto del h1 como del h2 que serian uno para la 
+                    cabecera "header" y el otro para los articulos "article", como ya los tenia, pues solo agrege una linea de codigo que era el font family 
+                    en ambos, no tuve que añadir esos dos bloques extras, porque aja, mas trabajo y que pereza. <br><br>
+
+                    Como dijo loquendo, yo no lo descargo porque ya lo tengo. (mano en este punto tengo muy pegada en la cabeza "La carcel de Sing Sing - Alci acosta")
+                </p>
 
             </article>
             
