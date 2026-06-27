@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=devce-width, initial-scale=1.0">
-        <title>Tercera Entrada - Mi Blog</title>
+        <title>Tercera Entrada - BlueNotes</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 
         <header>
 
-            <h1><a href="../index.html">Mi Blog</a></h1>
+            <h1><a href="../index.html">BlueNotes</a></h1>
 
             <nav>
                 <a href="../index.html">Inicio</a>
@@ -51,9 +51,129 @@
             </article>
 
             <article>
-                <a class="fecha">24 de junio , 2026</a>
+                <h2>¿What is Git and GitHub?</h2>
+                <a class="fecha">24 de junio, 2026</a>
+                <p>A grandes razgos, y sin matarnos tanto la cabeza con las definiciones pues.... <br><br>
+
+                    Git es un control de versiones, el cual llevara o lleva, qsyo, el registro de todas las modificaciones que le hemos realizado al codigo fuente del proyecto
+                    o a algun otro archivo perteneciente al mismo. <br><br>
+
+                    GitHub, por otro lado, actua como nuestro Google Drive (chimba de analogia), es el lugar en donde se encuentra el repositorio de nuestro proyecto, y con
+                    repositorio me refiero a todos los archivos pertenecientes al mismo (acostumbrense a la palabra repositorio, despues entenderan porque). <br><br>
+
+                    Dentro del GitHub, vamos a asignarle una URL en este caso a la pagina (cosa que ya hice, por algo estas leyendo esto), probamos como actuan las interfaces en 
+                    diferentes dispositivos "Movil o PC", y demas cositas que explicare a continuacion.
+                </p>
+            </article>
+
+
+            <article>
+                <a class="fecha">25 de junio , 2026</a>
                 <p>
-                    
+                    Bueno, ahora si.... no me dejan procrastinar a gusto (deus mio!) Para poder cargar los proyectos a github, primero toca, verificar si
+                    tenemos git instalado, en mi caso como actualmente estoy usando linux mint como sistema operativo, los siguientes comandos son ejecutados desde
+                    una terminal, dentro de la carpeta correspondiente del proyecto, (nose como sera en windows, espero que igual), lo primero, verificar la version de
+                    git con el comando "git --version", esto para saber si lo tenemos instalado, (en caso de que no, aplicar la de "sudo apt install git" algo asi). <br><br>
+
+                    Literalmente ahora toca presentarnos ante git (esto es muy esquizofrenico), necesitamos obviamente tener una cuenta de github tambien, y el chiste de
+                    que nos pidan estos datos es para poder saber quienes somos cada vez que modificamos un archivo, repositorio etc, los comandos que tenemos que colocar son:
+                    <br> <br>
+                    git config --global user.name "Nombre de usuario"
+                    <br>
+                    git config --global user.email "emaildelapersona@comes.com"
+                    <br> <br>
+
+                    Ahora si, tenemos que convertir la carpeta del proyecto en un repositorio, primero obviamente tenemos que ubicarnos dentro de la carpeta, en este caso desde
+                    la terminal, para saber que estamos en la carpeta, tiene que decir algo por este estilo, "blueee@blueee-X456UA:~/Escritorio/BlueNotes$" lo cual tambien se 
+                    puede lograr con este comando "cd ~/Escritorio/Mi\ blog"</p>
+            </article>
+
+            <article>
+                <h2>Subir Proyectos a Github</h2>
+                <a class="fecha">25 de junio, 2026</a>
+                <p>Ya podemos empezar a mandar aca los comandos importantes: <br><br>
+
+                    "git init" -> Este comando crea un repositorio Git vacio dentro de la carpeta del proyecto, el archivo esta como no visible, asi que no pasa nada si no lo vemos. <br><br>
+
+                    "git branch -m main" -> Este comando renombra la rama "master" a main (creo que era por algo de que git ya no usa mas master y tiene que usar el main algo asi entendi). <br><br>
+
+                    "git add ." -> Con este comando le estamos diciendo a Git que registre todos los archivos que se encuentren en la carpeta del proyecto, y con todo me refiero a absolutamente todo. <br><br>
+
+                    "git commit -m "primer comit: bla bla"" -> El comit es como una foto, de lo que tenemos actualmente desarrollado, y el mensaje entre comillas sirve como descripcion de la foto,
+                    por lo general cuando hagamos algun cambio o modificacion siempre vamos a tener que colocar estos 3 comandos, desde el add, hasta el push, para guardar los avances que hicimos. <br><br>
+
+                    "git push -u origin main" -> Este es el comando que hace la magia, el que carga/sube el codigo, pero aca llegamos a la parte que me tire horas jodiendo por culpa de un token, resulta
+                    que la primera vez que haces un "push" de un nuevo proyecto, GitHub te pide "autenticacion", es decir te solicita usuario y contraseña para poder acceder a tu cuenta y completar la subida
+                    de archivos.
+                </p>
+            </article>
+
+            <article>
+                <h2>Token y Contraseñas</h2>
+                <a class="fecha">25 de junio, 2026</a>
+                <p>Resulta pasa sucede y acontece que, GitHub dejo de aceptar contraseñas normales por seguridad desde el 2021 (sopresa estamos en 2026), ahora utiliza TOKENS (no como los de las webcam.... bueno
+                    quizas si), Esto agrega un paso extra a la carga de archivos pero se hace una sola vez, (por proyecto) <br><br>
+
+                    Dentro de Github, tenemos que ir a "setting", dandole click a nuestra foto de perfil, y en ese apartado bajar en el menu del lateral izquiero hasta encontrar la opcion que dice "Developer settings"
+                    ahi se nos despliegan dos opciones mas, nosotros necesitamos la que dice "Tokens (Classic)", cuando entramos ahi nos aparece la opcion de generar un nuevo fokin TOKEN (classic obviamente). <br><br>
+
+                    En la parte de "note" colocamos el titulo del proyecto o como lo tengamos nombrado, y en el apartado de "expiration" le colocamos "no expiration", luego marcamos la casilla de "repo" verificando que
+                    todo el grupo aparezca marcado y por fin podremos darle a "Generate token". <br><br>
+
+                    Despues de eso nos va a mostrar algo como "JASFIUGQIbkjbaiubqfKSHAF.ghp" (se los juro que es asi) y por lo que mas quieran copienlo y no lo pierdan, porque esa es la contraseña para poder subir el archivo
+                    /proyecto, ahora si podemos ejecutar el "git push", llenamos nuestro usuario con el usuario de GitHub obviamente y en la parte de "Password" PONEMOS EL HIJUEPUTA TOKEN :3
+                </p>
+            </article>
+
+            <article>
+                <h2>Por Si Acaso</h2>
+                <a class="fecha">25 de junio, 2026</a>
+                <p>Puede pasar que si le insistimos muchas veces, se nos termine guardando la contraseña incorrecta, para poder borrarla (literal tenemos que borrar el cache) debemos usar el sigueinte comando (SIEMPRE DESDE LA
+                    CARPETA DEL PROYECTO) <br><br>
+
+                    "git config --global --unset credential.helper" -> esto limpia la contraseña que teniamos mal pero ahora tenemos que volver a configurar el token que ojala no hayan perdido o borrado. <br><br>
+
+                    "git remote set-url origin https://tu_usuario:TU_TOKEN_AQUI@github.com/tu_usuario/mi-blog.git" -> emmmmmmm, aja eso, solo ejecutelo, no me pregunte que hace. <br><br>
+
+                    Ahora si volvemos a ejecutar el "git push -u origin main" si nos pide Usuario y contraseña otra vez, pues ya sabe, usuario el suyo y contraseña el token que creaste con tanto esfuerzo papito lindo,
+                    si todo salio bien deberia salir algo asi.
+
+                    <pre><code>
+
+    blueee@blueee-X456UA:~/Escritorio/Mi blog$ git push -u origin main
+    Enumerando objetos: 5, listo.
+    Contando objetos: 100% (5/5), listo.
+    Compresión delta usando hasta 4 hilos
+    Comprimiendo objetos: 100% (4/4), listo.
+    Escribiendo objetos: 100% (5/5), 1.62 KiB | 551.00 KiB/s, listo.
+    Total 5 (delta 0), reusados 0 (delta 0), pack-reusados 0
+    To https://github.com/Hakkai01/mi-blog.git
+     * [new branch]      main -> main
+    rama 'main' configurada para rastrear 'origin/main'.
+    blueee@blueee-X456UA:~/Escritorio/Mi blog$
+    
+                    </code></pre>
+
+                    Si sale asi, FELICIDADES, Acabaste de subir el codigo de tu proyecto a internet, ahora si miras en tu perfil de github, y entras a tus repositorios, aparecera tu proyecto cargado
+                    (ojala marcado como publico), ahora, dale en settings o en el engranaje, dentro de tu repositorio, busca la parte que diga "pages" y en la opcion de "Branch" selecciona "main" y la 
+                    carpeta "/ (root)", dale guardar y asi GitHub a los 2 o 3 minutos te mostrara una URL, en el caso mio asi me dio el link de esta fokin pagina, asi te puede pasar a ti.
+
+                </p>
+            </article>
+
+            <article>
+                <h2>Recordatorio</h2>
+                <a class="fecha">25 de junio, 2026</a>
+                <p>Los comandos que mas usamos, son el add, el commit y el push, (se deben usar, o asi acostumbre yo y lo considero una buena practica) cada que hacemos una modificacion a los archivos, con el fin de ir actualizando
+                    obvio en pro de mejoras, nuestros proyectos. (el orden siempre sera el mismo) <br><br>
+
+                    "git add ."<br>
+                    "git commit -m "Avanze 1.1 o lo que le quieran poner""<br>
+                    "git push"
+                    <br><br>
+
+                    Tendremos que esperar como 5 min o nose cuanto aveces menos aveces mas, para poder ver los cambios a traves del link de nuestro proyecto, pero ya llegados aca, 5 minutos de espera no son nada.
+
                 </p>
             </article>
 
@@ -62,6 +182,6 @@
     </body>
 
     <footer>
-        <p>Hecho por mi persona - 2026</p>
+        <p>Create By Blueee - 2026</p>
     </footer>
 </html>
