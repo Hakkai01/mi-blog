@@ -11,13 +11,20 @@
 </head>
 <body>
     
+    <div class="bienvenida" id="bienvenida">
+    <div class="bienvenida-contenido">
+        <h1>BlueNotes</h1>
+        <p>Desarrollo, Disocie, Proyectos y ya, creo...</p>
+        <p class="bienvenida-advertencia">⚠ Aca se maneja un lenguaje mas burdo, asi que no espere ver algo muy refinado.</p>
+        <button onclick="entrar()">Entrar →</button>
+    </div>
+    </div>
+    
     <header>
         <h1>BlueNotes</h1>
     </header>
 
     <main>
-
-    <p class="advertencia">El contenido de este "blog" es en su mayor parte la documentacion de mi proceso de aprendizaje referente a HTML, tenga en cuenta que si no tolera el lenguaje vulgar, lo mejor seria que no mire el contenido, ya que hay una mezcla de groserias y sarcasmo que forman parte de mi personalidad... ATT: Blueee</p>
 
     <section class="categorias">
 
@@ -48,4 +55,11 @@
     </footer>
 
 </body>
+
+<script>
+    function entrar() {
+        document.getElementById('bienvenida').classList.add('oculta');
+    }
+</script>
+
 </html>
