@@ -380,4 +380,19 @@ footer {
     .entradas-grid {
         grid-template-columns: 1fr;
     }
+
+    article {
+        padding: 16px;
+        word-break: break-word;
+    }
+
+    pre {
+        font-size: 11px;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    main {
+        padding: 0 10px;
+    }
 }
