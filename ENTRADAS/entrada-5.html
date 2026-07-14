@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cuarta Entrada - BlueNotes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+
+    <body>
+
+        <header>
+
+            <h1><a href="../index.html">BlueNotes</a></h1>
+
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="../sobre-mi.html">Sobre mi</a>
+            </nav>
+
+        </header>
+
+        <main class="entrada-completa">
+
+            <div class="contenido">
+
+                <article id="pantalla-de-bienvenida">
+                <h2>Pantalla De Bienvenida</h2>
+                <p class="fecha">13 de julio, 2026</p>
+                <p>A diferencia del HTML como tal, que define lo que hay en una pagina, y el CSS que modifica el como se ve esa
+                pagina, el JS o (JavaScript) define lo que hace, este mismo responde a las acciones del usuario y modifica
+                el HTML y el CSS, en tiempo real, obviamente estamos hablando desde la parte tecnica. <br><br>
+
+                Lo que yo quiero hacer ahora es que, cuando el usuario o la persona haga click en el boton entrar, este mismo
+                desaparezca de la pantalla, un CSS puede cambiar las cosas cuando el mouse pasa por encima de este, pero 
+                no lo desaparece si alguien hiciera click en el, esa ya es la funcion del Java. <br><br>
+
+                para entenderlo mucho mejor tenemos que divir el proceso en 3 partes, y modificar tanto el css como el index agregando
+                3 bloques de codigo, primero lo haremos con el index: (ojo, esto lo tenemos que agregar despues de la primer etiqueta del "body") 
+            
+                <pre><code> INDEX
+"div class="bienvenida" id="bienvenida""
+    "div class="bienvenida-contenido""
+        "h1>BlueNotes</h1"
+        "p>Documentación personal de un proceso de aprendizaje en desarrollo web."/p"
+        "p class="bienvenida-advertencia""⚠ Este blog contiene lenguaje vulgar y sarcasmo. Si eso te molesta, mejor date la vuelta."/p"
+        "button onclick="entrar()""Entrar →"/button"
+    "/div"
+"/div"
+                </code></pre>
+            </p>
+
+            <p>
+            Aca lo que estamos haciendo es crear lo que sera nuestra nueva pantalla principal, y lo que aparecera cada vez que una persona ingrese a nuestra
+            pagina, pero a esto tenemos que agregarle tambien un estilo, sino quedaria solo como un pedazo de texto colgado en una pared blanca (HORRIBLE).
+            </p>
+            </article>
+
+            <article id="estilo-de-bienvenida">
+            <h2>Estilo De Bienvenida</h2>
+            <p class="fecha">13 de julio, 2026</p>
+
+            <pre><code> CSS
+/* ===== BIENVENIDA ===== */
+.bienvenida {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.bienvenida-contenido {
+    text-align: center;
+    max-width: 500px;
+    padding: 40px;
+}
+
+.bienvenida-contenido h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.bienvenida-contenido p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.bienvenida-advertencia {
+    background: #fff8e1;
+    border-left: 3px solid #f0c000;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: #555;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.bienvenida-contenido button {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s ease;
+}
+
+.bienvenida-contenido button:hover {
+    background: #333;
+}
+
+.bienvenida.oculta {
+    opacity: 0;
+    pointer-events: none;
+}
+            </code></pre>
+
+            <p>Bla bla bla, mucho texto, no voy a entrar en detalle de todo lo que agregamos aca, unicamente voy a decir que
+            se declararon las variables, que seria todo lo que tiene ."nombre" para que modifique etiquetas especificas
+            con la clase declarada y asi no modifique nada mas, eso ya lo veniamos haciendo hace rato, ahora solo nos faltaria
+            una cosa, agregar el script de java, y lo vamos a hacer directamente en el index, asi como el primer bloque que pusimos.</p>
+            <pre><code> JavaScript
+"script"
+    function entrar() {
+        document.getElementById('bienvenida').classList.add('oculta');
+    }
+"/script"
+            </code></pre>
+            <p>Este bloque de codigo tenemos que colocarlo justo antes de que se cierre la etiqueta del "body", sino no servira nada de lo
+            que hicimos, mas adelante agregare una animacion de texto, pero para eso se tiene que implementar una libreria llamada GSAP,
+            y no me voy a matar la cabeza aun con eso. (cuando lo ponemos en un archivo .js, no hace falta escribir el "script" "/script") </p>
+            </article>
+
+            <article id="como-funciona-el-script">
+            <h2>Como Funciona el Script</h2>
+            <p class="fecha">13 de julio, 2026</p>
+            <p>En este bloque agregamos bastantes cositas, primero expliquemos parte por parte del codigo: <br><br>
+
+            <strong>funcion entrar() -> </strong> Este pedazo define la funcion, es decir declara un bloque de codigo con nombre, y este mismo no hace nada
+            hasta que es llamado por una accion. <br><br>
+
+            <strong>document -> </strong> Representa toda la pagina que tenemos, es el punto de entrada para que el JS (JavaScript pa los panas) manipule cualquier
+            cosa dentro del documento. <br><br>
+
+            <strong>.getElementById('bienvenida') -> </strong> (puto nombre tan largo) Busca en la pagina algun elemento que tenga declarado un id='bienvenida' y 
+            lo coge, (jaja lo coge), literalmente lo agarra, es como decirle al JS, encuentreme especificamente a este fulano. <br><br>
+
+            <strong>.classList.add('oculta') -> </strong> agrega la clase CSS "oculta" al div, y como en el CSS ya definimos una variable como .bienvenia.oculta
+            entonces lo que hacemos es que con esta clase, el div, se vuelve transparente con una animacion de 0.5 segundos, que tambien esta
+            dentro de todo ese palabrerio que pusimos en el css. <br><br>
+
+            Todo dentro del CSS es modificable, el chiste es jugar con los valores hasta que a uno le guste el resultado.</p>
+            </article>
+
+            <article id="ahora-si-java">
+            <h2>Ahora si Java</h2>
+            <p class="fecha">13 de julio, 2026</p>
+            <p>Ahora si podemos entrar en materia de lo que nos interesa, el java script, yo personalmente al principio lo odiaba, digamos que los profesores encargados de enseñarme
+            este lenguaje de programacion lo hacian como la mrda, por ende le cogi mucho mas odio que amor, pero una vez uno se toma la molestia de ver cuales son sus capacidades,
+            en el lugar que uno esta trabajando, pues aprende a quererlo igual, obvio no le hecho la culpa a los modos de enseñanza de los malparidos de mis profesores, pero en parte si. <br><br>
+
+            Ahora, primero tenemos que entender 3 conceptos, los cuales ami no me explicaron tan claro, ojo estos aplicados al HTML y CSS, porque esa es nuestra base de trabajo: <br><br>
+
+            <strong>1. Variables -> Almacenar/guardar informacion </strong> <br><br>
+
+            let nombre = "Blueee"<br>
+            let edad = 20 <br>
+            let aprendiendo = true <br><br>
+
+            No hace falta explicacion, cada variable guarda la informacion que nosotros le indicamos, bien sea, texto, numeros, o incluso mas codigo. <br><br>
+
+            <strong>2. Funciones -> Codigo con nombre que puede ser llamado </strong> <br><br>
+
+            a diferencia de las variables que guardan informacion, las funciones ejecutan acciones, cuando uno lo solicita, y por lo general son bloques completos de codigo
+            para una accion o instruccion especifica. <br>
+            <pre><code>
+function saludar() { 
+    console.log("Hola!") 
+} 
+
+saludar() // esto la ejecuta 
+            </code></pre> <br>
+
+            <strong>3. DOM -> (no el de marvel) Manipulacion de la pagina </strong> <br><br>
+
+            // Encuentra un elemento por su id <br><br>
+            let elemento = document.getElementById("mi-div") <br><br>
+
+            // Cambia su contenido <br><br>
+            elemento.innerHTML = "Texto nuevo" <br><br>
+
+            // Agrega o quita clases CSS <br><br>
+            elemento.classList.add("activo")
+            elemento.classList.remove("activo") <br><br>
+
+            La traduccion literal es muy sencilla, el DOM, como tal declara las acciones, bien sea algo como, encontrar, cambiar, agregar o borrar, antes lo habiamos usado para 
+            hacer la pantalla de bienvenida de la pagina, usamos algo asi: <br><br>
+            
+            <strong>document.getElementById('bienvenida').classList.add('oculta') </strong> <br><br>
+
+            Que traducido al español nos diria algo como "Del documento x, traer el elemento que se identifique por el ID ('bienvenida') y agregarle la clase CSS ('oculta') ingles
+            basico mi negro.
+            </p>
+            </article>
+
+            </div>
+
+               <aside class="sidebar">
+                <h3>Entradas Recientes</h3>
+                <ul>
+                    <li><a href="#pantalla-de-bienvenida">Pantalla De Bienvenida</a></li>
+                    <li><a href="#estilo-de-bienvenida">Estilo De Bienvenida</a></li>
+                    <li><a href="#como-funciona-el-script">Como Funciona El Script</a></li>
+                    <li><a href="#ahora-si-java">Ahora si Java</a></li>
+                   
+                </ul>
+
+            </aside>
+
+        </main>
+
+        <footer>
+            <p>Create By Blueee - 2026</p>
+        </footer>
+
+    </body>
+</html>

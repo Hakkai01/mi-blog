@@ -352,8 +352,39 @@ footer {
     border-color: #000;
 }
 
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+}
+
+.hero-sub {
+    font-size: 16px;
+    color: #888;
+    margin: 0;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
+    .hero {
+        padding: 40px 20px 24px;
+    }
+
+    .hero-titulo {
+        font-size: 32px;
+    }
+
+    .hero-sub {
+        font-size: 14px;
+    }
 
     .categorias {
         grid-template-columns: 1fr;
