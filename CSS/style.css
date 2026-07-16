@@ -652,4 +652,9 @@ footer {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
